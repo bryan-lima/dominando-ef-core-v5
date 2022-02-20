@@ -49,7 +49,7 @@ namespace EFCore.Testes
 
             // Assert
             Action _action = () => _context.Departamentos.FirstOrDefault(departamento => EF.Functions.DateDiffDay(DateTime.Now, departamento.DataCadastro) > 0);
-            Assert.Throws<NotImplementedException>(_action);
+            Assert.Throws<InvalidOperationException>(_action);
         }
 
         private ApplicationContext CreateContext()
